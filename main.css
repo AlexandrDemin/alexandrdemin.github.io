@@ -1,9 +1,11 @@
 .container {
 	position:fixed;
 	width: 100vw;
+	pointer-events: none;
 }
 
 .rotation {
+	pointer-events: initial;
 	border-radius: 50%;
 	max-height:400px;
 	max-width:400px;
