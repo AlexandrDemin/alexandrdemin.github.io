@@ -2,6 +2,7 @@
 	position:fixed;
 	width: 100vw;
 	pointer-events: none;
+	z-index: 3;
 }
 
 .rotation {
@@ -14,7 +15,7 @@
 	margin: 20vh auto 0;
 	background: #000 url(background.gif) 50% 50% no-repeat;
 	background-size: contain;
-	z-index: 1;
+	z-index: 5;
 	transition:15s;
 	animation: 95s rotation ease-in-out;
 	animation-iteration-count:infinite;
@@ -32,6 +33,7 @@
 	bottom: 2em;
 	position: fixed;
 	width: 100%;
+	z-index: 0;
 }
 
 .contacts a {
