@@ -1,0 +1,61 @@
+.container {
+	position:fixed;
+	width: 100vw;
+}
+
+.rotation {
+	border-radius: 50%;
+	max-height:400px;
+	max-width:400px;
+	width:50vw;
+	height:50vw;
+	margin: 20vh auto 0;
+	background: #000 url(background.gif) 50% 50% no-repeat;
+	background-size: contain;
+	transition:15s;
+	animation: 95s rotation ease-in-out;
+	animation-iteration-count:infinite;
+	-webkit-animation: 95s rotation ease-in-out;
+	-webkit-animation-iteration-count:infinite;
+	-moz-animation: 95s rotation ease-in-out;
+	-moz-animation-iteration-count:infinite;
+	-o-animation: 95s rotation ease-in-out;
+	-o-animation-iteration-count:infinite;
+}
+
+.contacts {
+	text-align: center;
+	font-size: 1em;
+	bottom: 2em;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+}
+
+.contacts a {
+	color: rgba(0,0,0,0.2);
+	text-decoration: none;
+	background: #fff;
+}
+
+.contacts a:hover, .contacts a:active, .contacts a:focus {
+	color: #333333;
+}
+
+@keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
+@-moz-keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
+@-webkit-keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
+@-o-keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
+
+canvas{
+	display:block;
+	vertical-align:bottom;
+}
+
+#particles-js{
+	height:96vh;
+	background:transparent;
+	margin:0;
+	padding: 0;
+}
+

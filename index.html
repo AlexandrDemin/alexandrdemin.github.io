@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alexandr Demin</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="particles.min.js"></script>
+</head>
+<body>
+	<div id="particles-js">
+		<div class="container"><div id="image" class="rotation" onclick="nextImage()"></div></div>
+		<div class="contacts"><a href="mailto:alexandr@demin.io">alexandr@demin.io</a></div>
+	</div>
+	<script type="text/javascript">
+		var obj = document.getElementById("image");
+		var i = 1;
+		function nextImage() {
+			if (i<7) {
+				obj.style.backgroundImage = "url('background"+i+".gif')";
+				i=i+1;
+			} else {
+				obj.style.backgroundImage = "url('background.gif')";
+				i=1;
+			}
+		}
+		particlesJS('particles-js', {
+		  particles: {
+		    color: '#333',
+		    color_random: false,
+		    shape: 'circle', // "circle", "edge" or "triangle"
+		    opacity: {
+		      opacity: 1,
+		      anim: {
+		        enable: true,
+		        speed: 0.1,
+		        opacity_min: 0,
+		        sync: false
+		      }
+		    },
+		    size: 2.5,
+		    size_random: true,
+		    nb: 100,
+		    line_linked: {
+		      enable_auto: true,
+		      distance: 140,
+		      color: '#f2f2f2',
+		      opacity: 1,
+		      width: 1,
+		      condensed_mode: {
+		        enable: true,
+		        rotateX: 1000,
+		        rotateY: 600
+		      }
+		    },
+		    anim: {
+		      enable: true,
+		      speed: 0.5
+		    }
+		  },
+		  interactivity: {
+		    enable: false,
+		    mouse: {
+		      distance: 250
+		    },
+		    detect_on: 'canvas', // "canvas" or "window"
+		    mode: 'grab', // "grab" of false
+		    line_linked: {
+		      opacity: .5
+		    },
+		    events: {
+		      onclick: {
+		        enable: true,
+		        mode: 'push', // "push" or "remove"
+		        nb: 1
+		      },
+		      onresize: {
+		        enable: true,
+		        mode: 'bounce', // "out" or "bounce"
+		        density_auto: false,
+		        density_area: 800 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
+		      }
+		    }
+		  },
+		  /* Retina Display Support */
+		  retina_detect: true
+		});
+	</script>
+</body>
+</html>
