@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Test</title>
+	<title>Alexandr Demin</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script type="text/javascript" src="particles.min.js"></script>
 </head>
@@ -36,12 +36,12 @@
 		        sync: false
 		      }
 		    },
-		    size: 2.5,
+		    size: 3.5,
 		    size_random: true,
 		    nb: 100,
 		    line_linked: {
 		      enable_auto: true,
-		      distance: 140,
+		      distance: 240,
 		      color: '#f2f2f2',
 		      opacity: 1,
 		      width: 1,
@@ -61,22 +61,22 @@
 		    mouse: {
 		      distance: 250
 		    },
-		    detect_on: 'canvas', // "canvas" or "window"
+		    detect_on: 'window', // "canvas" or "window"
 		    mode: 'grab', // "grab" of false
 		    line_linked: {
-		      opacity: .5
+		      opacity: 1
 		    },
 		    events: {
 		      onclick: {
 		        enable: true,
 		        mode: 'push', // "push" or "remove"
-		        nb: 1
+		        nb: 3
 		      },
 		      onresize: {
 		        enable: true,
 		        mode: 'bounce', // "out" or "bounce"
-		        density_auto: false,
-		        density_area: 800 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
+		        density_auto: true,
+		        density_area: 1000 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
 		      }
 		    }
 		  },
