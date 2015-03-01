@@ -13,17 +13,17 @@
 	width:50vw;
 	height:50vw;
 	margin: 20vh auto 0;
-	background: #000 url(background.gif) 50% 50% no-repeat;
+	background: #333 url(background.gif) 50% 50% no-repeat;
 	background-size: contain;
 	z-index: 5;
 	transition:1s;
-	animation: 95s rotation linear;
+	animation: 220s rotation linear;
 	animation-iteration-count:infinite;
-	-webkit-animation: 95s rotation linear;
+	-webkit-animation: 220s rotation linear;
 	-webkit-animation-iteration-count:infinite;
-	-moz-animation: 95s rotation linear;
+	-moz-animation: 220s rotation linear;
 	-moz-animation-iteration-count:infinite;
-	-o-animation: 95s rotation linear;
+	-o-animation: 220s rotation linear;
 	-o-animation-iteration-count:infinite;
 }
 
@@ -58,7 +58,7 @@
 		transform: rotate(360deg) 
 				   scale(0.5) 
 				   translate(20vw,10vw);
-		opacity: 0.7;
+		opacity: 0.88;
 	} 
 	
 	100% {
@@ -81,7 +81,7 @@
 		transform: rotate(360deg) 
 				   scale(0.5) 
 				   translate(20vw,10vw);
-		opacity: 0.7;
+		opacity: 0.88;
 	} 
 	
 	100% {
@@ -104,7 +104,7 @@
 		transform: rotate(360deg) 
 				   scale(0.5) 
 				   translate(20vw,10vw);
-		opacity: 0.7;
+		opacity: 0.88;
 	} 
 	
 	100% {
@@ -127,7 +127,7 @@
 		transform: rotate(360deg) 
 				   scale(0.5) 
 				   translate(20vw,10vw);
-		opacity: 0.7;
+		opacity: 0.88;
 	} 
 	
 	100% {
