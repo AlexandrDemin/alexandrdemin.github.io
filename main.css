@@ -16,14 +16,14 @@
 	background: #000 url(background.gif) 50% 50% no-repeat;
 	background-size: contain;
 	z-index: 5;
-	transition:15s;
-	animation: 95s rotation ease-in-out;
+	transition:1s;
+	animation: 95s rotation linear;
 	animation-iteration-count:infinite;
-	-webkit-animation: 95s rotation ease-in-out;
+	-webkit-animation: 95s rotation linear;
 	-webkit-animation-iteration-count:infinite;
-	-moz-animation: 95s rotation ease-in-out;
+	-moz-animation: 95s rotation linear;
 	-moz-animation-iteration-count:infinite;
-	-o-animation: 95s rotation ease-in-out;
+	-o-animation: 95s rotation linear;
 	-o-animation-iteration-count:infinite;
 }
 
@@ -46,10 +46,97 @@
 	color: #333333;
 }
 
-@keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
-@-moz-keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
-@-webkit-keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
-@-o-keyframes rotation {0% {transform: rotate(0deg) scale(1)} 50% {transform: rotate(180deg) scale(0.5)} 100% {transform: rotate(360deg) scale(1)}}
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg)
+				   scale(1)
+				   translate(0px,0px);
+		opacity: 1;
+	} 
+	
+	50% {
+		transform: rotate(360deg) 
+				   scale(0.5) 
+				   translate(20vw,10vw);
+		opacity: 0.7;
+	} 
+	
+	100% {
+		transform: rotate(720deg) 
+				   scale(1) 
+				   translate(0px,0px);
+		opacity:1;
+	}
+}
+
+@-moz-keyframes rotation {
+	0% {
+		transform: rotate(0deg)
+				   scale(1)
+				   translate(0px,0px);
+		opacity: 1;
+	} 
+	
+	50% {
+		transform: rotate(360deg) 
+				   scale(0.5) 
+				   translate(20vw,10vw);
+		opacity: 0.7;
+	} 
+	
+	100% {
+		transform: rotate(720deg) 
+				   scale(1) 
+				   translate(0px,0px);
+		opacity:1;
+	}
+}
+
+@-webkit-keyframes rotation {
+	0% {
+		transform: rotate(0deg)
+				   scale(1)
+				   translate(0px,0px);
+		opacity: 1;
+	} 
+	
+	50% {
+		transform: rotate(360deg) 
+				   scale(0.5) 
+				   translate(20vw,10vw);
+		opacity: 0.7;
+	} 
+	
+	100% {
+		transform: rotate(720deg) 
+				   scale(1) 
+				   translate(0px,0px);
+		opacity:1;
+	}
+}
+
+@-o-keyframes rotation {
+	0% {
+		transform: rotate(0deg)
+				   scale(1)
+				   translate(0px,0px);
+		opacity: 1;
+	} 
+	
+	50% {
+		transform: rotate(360deg) 
+				   scale(0.5) 
+				   translate(20vw,10vw);
+		opacity: 0.7;
+	} 
+	
+	100% {
+		transform: rotate(720deg) 
+				   scale(1) 
+				   translate(0px,0px);
+		opacity:1;
+	}
+}
 
 canvas{
 	display:block;
@@ -57,7 +144,7 @@ canvas{
 }
 
 #particles-js{
-	height:1000vh;
+	height:500vh;
 	background:transparent;
 	margin:0;
 	padding: 0;

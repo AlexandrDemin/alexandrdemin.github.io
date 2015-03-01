@@ -13,7 +13,7 @@
 	</div>
 	<script type="text/javascript">
 		//$(document).load(function()	{
-			var obj = $("#image");
+			var obj = $("#image").get(0);
 			var i = 1;
 			function nextImage() {
 				if (i<7) {
@@ -26,7 +26,7 @@
 			}
 			particlesJS('particles-js', {
 			  particles: {
-			    color: '#333',
+			    color: '#666',
 			    color_random: false,
 			    shape: 'circle', // "circle", "edge" or "triangle"
 			    opacity: {
@@ -40,7 +40,7 @@
 			    },
 			    size: 2.5,
 			    size_random: true,
-			    nb: 100,
+			    nb: 50,
 			    line_linked: {
 			      enable_auto: true,
 			      distance: 240,
@@ -49,13 +49,13 @@
 			      width: 1,
 			      condensed_mode: {
 			        enable: true,
-			        rotateX: 1000,
+			        rotateX: 500,
 			        rotateY: 600
 			      }
 			    },
 			    anim: {
 			      enable: true,
-			      speed: 0.5
+			      speed: 1
 			    }
 			  },
 			  interactivity: {
@@ -76,7 +76,7 @@
 			      },
 			      onresize: {
 			        enable: true,
-			        mode: 'bounce', // "out" or "bounce"
+			        mode: 'out', // "out" or "bounce"
 			        density_auto: true,
 			        density_area: 1000 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
 			      }
