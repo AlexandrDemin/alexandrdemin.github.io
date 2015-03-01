@@ -13,7 +13,7 @@
 	width:50vw;
 	height:50vw;
 	margin: 20vh auto 0;
-	background: #333 url(background.gif) 50% 50% no-repeat;
+	background: #000 url(background.gif) 50% 50% no-repeat;
 	background-size: contain;
 	z-index: 5;
 	transition:1s;
