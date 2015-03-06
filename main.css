@@ -13,10 +13,10 @@
 	width:50vw;
 	height:50vw;
 	margin: 20vh auto 0;
-	background: #000 url(background.gif) 50% 50% no-repeat;
+	background: #000 50% 50% no-repeat;
 	background-size: contain;
 	z-index: 5;
-	transition:1s;
+	transition: background-image 1s;
 	animation: 220s rotation linear;
 	animation-iteration-count:infinite;
 	-webkit-animation: 220s rotation linear;
@@ -40,10 +40,12 @@
 	color: rgba(0,0,0,0.2);
 	text-decoration: none;
 	background: #fff;
+	transition: color 0.3s;
 }
 
 .contacts a:hover, .contacts a:active, .contacts a:focus {
 	color: #333333;
+	transition: color 0.3s;
 }
 
 @keyframes rotation {
@@ -144,7 +146,7 @@ canvas{
 }
 
 #particles-js{
-	height:500vh;
+	height:96vh;
 	background:transparent;
 	margin:0;
 	padding: 0;

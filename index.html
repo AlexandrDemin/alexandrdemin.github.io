@@ -15,9 +15,9 @@
 	<script type="text/javascript">
 		//$(document).load(function()	{
 			var obj = $("#image").get(0);
-			var i = 1;
+			var i = 0;
 			function nextImage() {
-				if (i<7) {
+				if (i<7 && i!=0) {
 					obj.style.backgroundImage = "url('background"+i+".gif')";
 					i=i+1;
 				} else {
