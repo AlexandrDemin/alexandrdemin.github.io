@@ -9,15 +9,21 @@
 </head>
 <body>
 	<div id="particles-js">
-		<div class="container"><div data-parallaxify-range-x="90" data-parallaxify-range-y="90" id="image" class="rotation"></div></div>
-		<div class="contacts"><a href="mailto:alexandr@demin.io">alexandr@demin.io</a></div>
+		<div class="container">
+			<div data-parallaxify-range-x="90" data-parallaxify-range-y="90" id="image" class="rotation"></div>
+		</div>
+		<div class="contacts">
+			<a href="mailto:alexandr@demin.io">alexandr@demin.io</a>
+		</div>
+		<div class="sound-button muted"></div>
 	</div>
-	<audio src="Worlds Of Amber.mp3" autoplay loop volume="0.5"></audio>
+	<audio src="Worlds Of Amber.mp3" preload="auto" loop volume="0"></audio>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			var obj = $("#image").get(0);
+			var $soundButton = $('.sound-button')
 			var i = 0;
-			$("#image").click(nextImage());
+			$("#image").click(nextImage);
 			function nextImage() {
 				if (i<7 && i!=0) {
 					obj.style.backgroundImage = "url('background"+i+".gif')";
@@ -27,6 +33,21 @@
 					i=1;
 				}
 			}
+			$soundButton.click(playMute);
+			function playMute() {
+				var audio = $('audio')[0],
+					$audio = $('audio');
+				if($soundButton.hasClass('muted')) {
+					audio.play();
+					$audio.animate({volume: 1}, 3000);
+				} else {
+					$audio.animate({volume: 0}, 3000);
+					setTimeout(function () {audio.pause()}, 3000);
+				}
+				$soundButton.toggleClass('muted');
+				$soundButton.toggleClass('sound');
+			}
+			setTimeout(playMute, 3000);
 			particlesJS('particles-js', {
 			  particles: {
 			    color: '#666',
@@ -36,14 +57,14 @@
 			      opacity: 1,
 			      anim: {
 			        enable: true,
-			        speed: 0.05,
+			        speed: 0.1,
 			        opacity_min: 0,
 			        sync: false
 			      }
 			    },
 			    size: 2.5,
 			    size_random: true,
-			    nb: 50,
+			    nb: 100,
 			    line_linked: {
 			      enable_auto: true,
 			      distance: 240,
@@ -58,7 +79,7 @@
 			    },
 			    anim: {
 			      enable: true,
-			      speed: 1
+			      speed: 0.65
 			    }
 			  },
 			  interactivity: {
@@ -88,24 +109,6 @@
 			  /* Retina Display Support */
 			  retina_detect: true
 			});
-
-			$('#image').parallaxify({
-	        motionType: 'natural',
-	        mouseMotionType: 'gaussian',
-	        useMouseMove: true,
-	        useGyroscope: true,
-	        parallaxBackgrounds: true,
-	        parallaxElements: true,
-	        horizontalParallax: true,
-	        verticalParallax: true,
-	        responsive: true,
-	        alphaFilter: 0.5,
-	        inputPriority: 'mouse',
-	        adjustBasePosition: true,
-	        alphaPosition: 0.05,
-	        positionProperty: 'position',
-
-	        });
 		});
 	</script>
 </body>
