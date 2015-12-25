@@ -5,17 +5,19 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script type="text/javascript" src="particles.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.parallaxify.min.js"></script>
 </head>
 <body>
 	<div id="particles-js">
-		<div class="container"><div id="image" class="rotation" onclick="nextImage()"></div></div>
+		<div class="container"><div data-parallaxify-range-x="90" data-parallaxify-range-y="90" id="image" class="rotation"></div></div>
 		<div class="contacts"><a href="mailto:alexandr@demin.io">alexandr@demin.io</a></div>
 	</div>
 	<audio src="Worlds Of Amber.mp3" autoplay loop volume="0.5"></audio>
 	<script type="text/javascript">
-		//$(document).load(function()	{
+		$(document).ready(function() {
 			var obj = $("#image").get(0);
 			var i = 0;
+			$("#image").click(nextImage());
 			function nextImage() {
 				if (i<7 && i!=0) {
 					obj.style.backgroundImage = "url('background"+i+".gif')";
@@ -34,7 +36,7 @@
 			      opacity: 1,
 			      anim: {
 			        enable: true,
-			        speed: 0.1,
+			        speed: 0.05,
 			        opacity_min: 0,
 			        sync: false
 			      }
@@ -86,12 +88,25 @@
 			  /* Retina Display Support */
 			  retina_detect: true
 			});
-			$(window).scroll(function() {
-				if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
-					$("#particles-js").get(0).scrollIntoView();
-				};
-			});
-	//	});
+
+			$('#image').parallaxify({
+	        motionType: 'natural',
+	        mouseMotionType: 'gaussian',
+	        useMouseMove: true,
+	        useGyroscope: true,
+	        parallaxBackgrounds: true,
+	        parallaxElements: true,
+	        horizontalParallax: true,
+	        verticalParallax: true,
+	        responsive: true,
+	        alphaFilter: 0.5,
+	        inputPriority: 'mouse',
+	        adjustBasePosition: true,
+	        alphaPosition: 0.05,
+	        positionProperty: 'position',
+
+	        });
+		});
 	</script>
 </body>
 </html>
