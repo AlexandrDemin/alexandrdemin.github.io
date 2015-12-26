@@ -102,7 +102,6 @@ $(document).ready(function() {
     $(document).mousemove(function() {
         if (!cursorHidden) {
             cursorHidden = false;
-            console.log('move');
             clearTimeout(j);
             $('html').css({cursor: 'default'});
             j = setTimeout(hideCursor, 1000);
