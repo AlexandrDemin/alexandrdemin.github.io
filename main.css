@@ -1,3 +1,7 @@
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+
 canvas{
 	display:block;
 	vertical-align:bottom;
@@ -49,27 +53,31 @@ canvas{
 .contacts {
 	text-align: center;
 	font-size: 1em;
-	bottom: 2em;
+	bottom: 0;
 	position: fixed;
+	width: auto;
 	width: 100%;
 	z-index: 0;
 }
 
 .contacts a {
-	color: rgba(0,0,0,0.2);
+	color: #ccc;
+	padding: 1em;
+	display: inline-block;
+	width: auto;
+	margin: 0 auto;
 	text-decoration: none;
 	background: #fff;
-	transition: color 0.3s;
+	transition: color 1s;
 }
 
 .contacts a:hover, .contacts a:active, .contacts a:focus {
 	color: #333333;
-	transition: color 0.3s;
+	transition: color 1s;
 }
 
-.sound-button {
+.control-button {
 	position: fixed;
-	right: 1em;
 	top: 1em;
 	height: 2em;
 	width: 2em;
@@ -80,10 +88,39 @@ canvas{
 	transition: opacity 0.2s;
 }
 
-.sound-button:hover {
-	opacity: 1;
-	transition: opacity 0.2s;
+.control-button:after {
+	content: '';
+	display: block;
+	position: absolute;
+	line-height: 2em;
+	width: 10em;
+	opacity: 0;
+	color: #ccc;
+}
 
+.control-button:hover {
+	opacity: 1;
+	transition: opacity 1s;
+}
+
+.control-button:hover:after {
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.sound-button {
+	right: 1em;
+}
+
+.sound-button:after {
+	content: 'Toggle music';
+	left: -11em;
+	text-align: right;
+	transform-origin: right;
+}
+
+.sound-button:hover:after {
+	animation-name: show-info-left;
 }
 
 .sound-button.sound {
@@ -92,6 +129,29 @@ canvas{
 
 .sound-button.muted {
 	background-image: url('mute.svg')
+}
+
+.fullscreen-button {
+	left: 1em;
+}
+
+.fullscreen-button:after {
+	content: 'Toggle fullscreen';
+	right: -11em;
+	text-align: left;
+	transform-origin: left;
+}
+
+.fullscreen-button:hover:after {
+	animation-name: show-info-right;
+}
+
+.fullscreen-button.fullscreen {
+	background-image: url('fullscreen.svg')
+}
+
+.fullscreen-button.not-fullscreen {
+	background-image: url('not-fullscreen.svg')
 }
 
 @keyframes rotation {
@@ -183,5 +243,27 @@ canvas{
 				   scale(1) 
 				   translate(0px,0px);
 		opacity:1;
+	}
+}
+
+@keyframes show-info-left {
+	from {
+		opacity:0;
+		transform: perspective(800px) rotateY(-90deg);
+	}
+	to {
+		opacity:1;
+		transform: perspective(800px) rotateY(0px);
+	}
+}
+
+@keyframes show-info-right {
+	from {
+		opacity:0;
+		transform: perspective(800px) rotateY(-90deg);
+	}
+	to {
+		opacity:1;
+		transform: perspective(800px) rotateY(0px);
 	}
 }
