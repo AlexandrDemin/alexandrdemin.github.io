@@ -20,9 +20,11 @@ $(document).ready(function() {
 		if($soundButton.hasClass('muted')) {
 			audio.play();
 			$audio.animate({volume: 1}, 3000);
+			ga('send', 'event', 'sound', 'play');
 		} else {
 			$audio.animate({volume: 0}, 3000);
 			setTimeout(function () {audio.pause()}, 3000);
+			ga('send', 'event', 'sound', 'pause');
 		}
 		$soundButton.toggleClass('muted');
 		$soundButton.toggleClass('sound');
@@ -33,6 +35,7 @@ $(document).ready(function() {
 	        screenfull.toggle();
 	        $fullscreenButton.toggleClass('fullscreen');
 			$fullscreenButton.toggleClass('not-fullscreen');
+			ga('send', 'event', 'fullscreen', 'toggle');
 	    }
 	}
 	particlesJS('particles-js', {
